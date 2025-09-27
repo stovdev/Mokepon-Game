@@ -10,22 +10,23 @@ function playerSelection() {
     let inputLangostel = document.getElementById("Langostel");
     let inputTucapalm = document.getElementById("Tucapalm");
     let inputPydos = document.getElementById("Pydos");
+    let spanPlayerMokepon = document.getElementById("player-mokepon");
     
 
 
     
     if (inputHipodoge.checked) {
-        alert("Select your Hipodoge");
+        spanPlayerMokepon.innerHTML = "Hipodoge";
     } else if (inputCapipepo.checked) {
-        alert("Select your Capipepo");
+        spanPlayerMokepon.innerHTML = "Capipepo";
     } else if (inputRatigy.checked) {
-        alert("Select your Ratigy");
+        spanPlayerMokepon.innerHTML = "Ratigy";
     } else if (inputLangostel.checked) {
-        alert("Select your Langostel");
+        spanPlayerMokepon.innerHTML = "Langostel";
     } else if (inputTucapalm.checked) {
-        alert("Select your Tucapalm");
+        spanPlayerMokepon.innerHTML = "Tucapalm";
     } else if (inputPydos.checked) {
-        alert("Select your Pydos");
+        spanPlayerMokepon.innerHTML = "Pydos";
     } else {
         alert("Select a Mokepon");
     }
