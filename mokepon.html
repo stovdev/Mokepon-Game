@@ -4,13 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="mokepon.js"></script>
 </head>
 <body>
     <h1>MOKEPON! 🔥💧🌱</h1>
-    <p>
-        <button>Fire🔥</button>
-        <button>Water💧</button>
-        <button>Grass🌱</button>
-    </p>
+
+    <section id="select-mokepon">
+        <h2>Select your Mokepon:</h2>
+
+        <label for="Hipodoge">Hipodoge 💧</label>
+        <input type="radio" name="mokepon" id="Hipodoge"/>
+
+        <label for="Capipepo">Capipepo 🌱</label>
+        <input type="radio" name="mokepon" id="Capipepo"/>
+
+        <label for="Ratigy">Ratigy 🔥</label>    
+        <input type="radio" name="mokepon" id="Ratigy"/>
+
+        <label for="Langostel">Langostel 💧🔥</label>
+        <input type="radio" name="mokepon" id="Langostel"/>
+
+        <label for="Tucapalm">Tucapalm 🌱💧</label>
+        <input type="radio" name="mokepon" id="Tucapalm"/>
+
+        <label for="Pydos">Pydos 🔥🌱</label> 
+        <input type="radio" name="mokepon" id="Pydos"/>
+        
+
+
+        Hipodoge -> Water💧
+        Capipepo -> Grass🌱
+        Ratigy -> Fire🔥
+        Langostel -> Water💧 y Fire🔥
+        Tucapalm -> Grass🌱 y Water💧
+        Pydos -> Fire🔥 y Grass🌱
+
+        <button>Select</button>
+
+    </section>
+    <section id="select-attack">
+        <h2>Select your attack:</h2>
+        <p>Your mokepon have <span>3</span> lives</p>
+        <p>Enemy mokepon has <span>3</span> lives</p>
+
+        <p>
+            <button>Fire🔥</button>
+            <button>Water💧</button>
+            <button>Grass🌱</button>
+        </p>
+    </section>
+    <section id="messages">
+        <p id="message">Your mokepon attacked with Fire🔥, the enemy mokepon attacked with Water💧 - You Lost</p>
+    </section>
+    <section id="restart">
+        <button>Restart</button>
+    </section>
+
+
+
+    
 </body>
 </html>
