@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="mokepon.js"></script>
+    <script src="./js/mokepon.js"></script>
 </head>
 <body>
     <h1>MOKEPON! 🔥💧🌱</h1>
@@ -39,25 +39,25 @@
         Tucapalm -> Grass🌱 y Water💧
         Pydos -> Fire🔥 y Grass🌱
 
-        <button>Select</button>
+        <button id="button-select-mokepon">Select</button>
 
     </section>
     <section id="select-attack">
         <h2>Select your attack:</h2>
-        <p>Your mokepon have <span>3</span> lives</p>
-        <p>Enemy mokepon has <span>3</span> lives</p>
+        <p>Your mokepon <span id="player-mokepon"></span> have <span id="player-lives"></span> lives</p>
+        <p>Enemy mokepon <span id="enemy-mokepon"></span> has <span id="enemy-lives"></span> lives</p>
 
         <p>
-            <button>Fire🔥</button>
-            <button>Water💧</button>
-            <button>Grass🌱</button>
+            <button id="button-fire">Fire🔥</button>
+            <button id="button-water">Water💧</button>
+            <button id="button-grass">Grass🌱</button>
         </p>
     </section>
     <section id="messages">
         <p id="message">Your mokepon attacked with Fire🔥, the enemy mokepon attacked with Water💧 - You Lost</p>
     </section>
     <section id="restart">
-        <button>Restart</button>
+        <button id="button-restart">Restart</button>
     </section>
 
 
