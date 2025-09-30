@@ -1,6 +1,15 @@
+let playerAttack
+
 function startGame() {
     let buttonMokepon = document.getElementById("button-select-mokepon");
     buttonMokepon.addEventListener("click", playerSelection);
+
+    let buttonFire = document.getElementById("button-fire");
+    buttonFire.addEventListener("click", fireAttack);
+    let buttonWater = document.getElementById("button-water");
+    buttonWater.addEventListener("click", waterAttack);
+    let buttonGrass = document.getElementById("button-grass");
+    buttonGrass.addEventListener("click", grassAttack);
 }
 
 function playerSelection() {    
@@ -50,6 +59,24 @@ function enemySelection() {
     }
 }
 
+function fireAttack() {
+    playerAttack = 'Fire'
+    alert(playerAttack)
+}
+
+function waterAttack() {
+    playerAttack = 'Water'
+    alert(playerAttack)
+}
+
+function grassAttack() {
+    playerAttack = 'Grass'
+    alert(playerAttack)
+}
+
+
+
+
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
     }
@@ -61,6 +88,3 @@ window.addEventListener("load", startGame);
 
 
 let buttonRestart = document.getElementById("button-restart");
-let buttonFire = document.getElementById("button-fire");
-let buttonWater = document.getElementById("button-water");
-let buttonEarth = document.getElementById("button-earth");
