@@ -1,4 +1,7 @@
 let playerAttack
+let enemyAttack
+
+
 
 function startGame() {
     let buttonMokepon = document.getElementById("button-select-mokepon");
@@ -10,6 +13,8 @@ function startGame() {
     buttonWater.addEventListener("click", waterAttack);
     let buttonGrass = document.getElementById("button-grass");
     buttonGrass.addEventListener("click", grassAttack);
+    
+    
 }
 
 function playerSelection() {    
@@ -20,7 +25,8 @@ function playerSelection() {
     let inputTucapalm = document.getElementById("Tucapalm");
     let inputPydos = document.getElementById("Pydos");
     let spanPlayerMokepon = document.getElementById("player-mokepon");
-     
+    
+
     if (inputHipodoge.checked) {
         spanPlayerMokepon.innerHTML = "Hipodoge";
     } else if (inputCapipepo.checked) {
@@ -41,41 +47,53 @@ function playerSelection() {
 }
 
 function enemySelection() {
-    let randomAttack = random(1,6)
+    let randomSelection = random(1,6)
     let spanEnemyMokepon = document.getElementById("enemy-mokepon");
 
-    if (randomAttack == 1) {
+    if (randomSelection == 1) {
         spanEnemyMokepon.innerHTML = "Hipodoge";
-    } else if (randomAttack == 2) {
+    } else if (randomSelection == 2) {
         spanEnemyMokepon.innerHTML = "Capipepo";
-    } else if (randomAttack == 3) {
+    } else if (randomSelection == 3) {
         spanEnemyMokepon.innerHTML = "Ratigy";
-    } else if (randomAttack == 4) {
+    } else if (randomSelection == 4) {
         spanEnemyMokepon.innerHTML = "Langostel";
-    } else if (randomAttack == 5) {
+    } else if (randomSelection == 5) {
         spanEnemyMokepon.innerHTML = "Tucapalm";
-    } else if (randomAttack == 5) {
+    } else if (randomSelection == 6) {
         spanEnemyMokepon.innerHTML = "Pydos";
     }
 }
 
 function fireAttack() {
-    playerAttack = 'Fire'
-    alert(playerAttack)
+    let spanPlayerAttack = document.getElementById("player-attack");  // Added this line to modify span player's attack in the HTML
+    spanPlayerAttack.innerHTML = "Fire"; // Added this line to modify span player's attack in the HTML
+    enemyRandomAttack()
 }
 
 function waterAttack() {
     playerAttack = 'Water'
-    alert(playerAttack)
+    enemyRandomAttack()
 }
 
 function grassAttack() {
     playerAttack = 'Grass'
-    alert(playerAttack)
+    enemyRandomAttack()
 }
 
+function enemyRandomAttack() {
+    let spanEnemyAttack = document.getElementById("enemy-attack"); // Added this line to modify span enemy's attack in the HTML
+    let randomAttack = random(1, 3)
 
-
+    if (randomAttack == 1) {
+        spanEnemyAttack.innerHTML = "Fire"; // Added this line to modify span enemy's attack in the HTML
+        enemyAttack = "Fire";
+    } else if (randomAttack == 2) {
+        enemyAttack = "Water";
+    } else if (randomAttack == 3) {
+        enemyAttack = "Grass";
+    }
+}
 
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -83,8 +101,5 @@ function random(min, max) {
 
 
 window.addEventListener("load", startGame);
-
-
-
 
 let buttonRestart = document.getElementById("button-restart");
