@@ -11,10 +11,7 @@ function playerSelection() {
     let inputTucapalm = document.getElementById("Tucapalm");
     let inputPydos = document.getElementById("Pydos");
     let spanPlayerMokepon = document.getElementById("player-mokepon");
-    
-
-
-    
+     
     if (inputHipodoge.checked) {
         spanPlayerMokepon.innerHTML = "Hipodoge";
     } else if (inputCapipepo.checked) {
@@ -30,7 +27,33 @@ function playerSelection() {
     } else {
         alert("Select a Mokepon");
     }
+
+    enemySelection()
 }
+
+function enemySelection() {
+    let randomAttack = random(1,6)
+    let spanEnemyMokepon = document.getElementById("enemy-mokepon");
+
+    if (randomAttack == 1) {
+        spanEnemyMokepon.innerHTML = "Hipodoge";
+    } else if (randomAttack == 2) {
+        spanEnemyMokepon.innerHTML = "Capipepo";
+    } else if (randomAttack == 3) {
+        spanEnemyMokepon.innerHTML = "Ratigy";
+    } else if (randomAttack == 4) {
+        spanEnemyMokepon.innerHTML = "Langostel";
+    } else if (randomAttack == 5) {
+        spanEnemyMokepon.innerHTML = "Tucapalm";
+    } else if (randomAttack == 5) {
+        spanEnemyMokepon.innerHTML = "Pydos";
+    }
+}
+
+function random(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
 
 window.addEventListener("load", startGame);
 
