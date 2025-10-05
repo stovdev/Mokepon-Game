@@ -1,5 +1,7 @@
 let playerAttack
 let enemyAttack
+let playerLives = 3;
+let enemyLives = 3;
 
 
 function startGame() {
@@ -94,17 +96,23 @@ function enemyRandomAttack() {
 }
 
 function combat() {
-    
+    let spanPlayerLives = document.getElementById("player-lives");
+    let spanEnemyLives = document.getElementById("enemy-lives");
+
     if (playerAttack == enemyAttack) {        
         createMessage("It's a tie");  //Send the message as the parameter to the function.
     } else if (playerAttack == "Fire" && enemyAttack == "Grass") {
         createMessage("You win");
+        spanEnemyLives.innerHTML = --enemyLives; // Decrease enemy lives by 1 and update the display
     } else if (playerAttack == "Water" && enemyAttack == "Fire") {
+        spanEnemyLives.innerHTML = --enemyLives;
         createMessage("You win");
     } else if (playerAttack == "Grass" && enemyAttack == "Water") {
+        spanEnemyLives.innerHTML = --enemyLives;
         createMessage("You win");
     } else {
         createMessage("You lose");
+        spanPlayerLives.innerHTML = --playerLives; // Decrease player lives by 1 and update the display
     }
 
 }
