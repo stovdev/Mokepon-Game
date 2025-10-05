@@ -115,6 +115,16 @@ function combat() {
         spanPlayerLives.innerHTML = --playerLives; // Decrease player lives by 1 and update the display
     }
 
+    checkLives()
+
+}
+
+function checkLives() {
+    if (playerLives == 0) {
+        createGameMessage("You lost the game");        
+    } else if (enemyLives == 0) {
+        createGameMessage("You won the game");
+    }
 }
 
 function createMessage(combatResult){   // Using the parameter as an internal variable for the fuction.
@@ -125,10 +135,16 @@ function createMessage(combatResult){   // Using the parameter as an internal va
     sectionMessages.appendChild(paragraph); // Add the paragraph to the messages section
 }
 
+function createGameMessage(gameResult){  
+    let sectionMessages = document.getElementById("messages"); 
+    let paragraph = document.createElement("p"); 
+    paragraph.innerHTML = gameResult
+
+    sectionMessages.appendChild(paragraph);
+}
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
     }
-
 
 window.addEventListener("load", startGame);
 
