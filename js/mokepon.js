@@ -5,7 +5,7 @@ let enemyAttack
 
 function startGame() {
     let buttonMokepon = document.getElementById("button-select-mokepon");
-    buttonMokepon.addEventListener("click", playerSelection);
+    buttonMokepon.addEventListener("click", playerSelection);   // When the button is clicked, it will call the playerSelection function
 
     let buttonFire = document.getElementById("button-fire");
     buttonFire.addEventListener("click", fireAttack);
@@ -18,7 +18,7 @@ function startGame() {
 }
 
 function playerSelection() {    
-    let inputHipodoge = document.getElementById("Hipodoge");
+    let inputHipodoge = document.getElementById("Hipodoge"); // Get the input element by its ID
     let inputCapipepo = document.getElementById("Capipepo");
     let inputRatigy = document.getElementById("Ratigy");
     let inputLangostel = document.getElementById("Langostel");
@@ -28,7 +28,7 @@ function playerSelection() {
     
 
     if (inputHipodoge.checked) {
-        spanPlayerMokepon.innerHTML = "Hipodoge";
+        spanPlayerMokepon.innerHTML = "Hipodoge"; // Change the inner HTML of the span to show the selected Mokepon
     } else if (inputCapipepo.checked) {
         spanPlayerMokepon.innerHTML = "Capipepo";
     } else if (inputRatigy.checked) {
@@ -68,16 +68,21 @@ function enemySelection() {
 function fireAttack() {
     let spanPlayerAttack = document.getElementById("player-attack");  // Added this line to modify span player's attack in the HTML
     spanPlayerAttack.innerHTML = "Fire"; // Added this line to modify span player's attack in the HTML
+    playerAttack = "Fire";
     enemyRandomAttack()
 }
 
 function waterAttack() {
-    playerAttack = 'Water'
+    let spanPlayerAttack = document.getElementById("player-attack")
+    spanPlayerAttack.innerHTML = "Water"  
+    playerAttack = "Water"  
     enemyRandomAttack()
 }
 
 function grassAttack() {
-    playerAttack = 'Grass'
+    let spanPlayerAttack = document.getElementById("player-attack")
+    spanPlayerAttack.innerHTML = "Grass"    
+    playerAttack = "Grass"
     enemyRandomAttack()
 }
 
@@ -87,12 +92,23 @@ function enemyRandomAttack() {
 
     if (randomAttack == 1) {
         spanEnemyAttack.innerHTML = "Fire"; // Added this line to modify span enemy's attack in the HTML
-        enemyAttack = "Fire";
+        enemyAttack = "Fire";        
     } else if (randomAttack == 2) {
+        spanEnemyAttack.innerHTML = "Water";
         enemyAttack = "Water";
     } else if (randomAttack == 3) {
-        enemyAttack = "Grass";
+        spanEnemyAttack.innerHTML = "Grass";      
+        enemyAttack = "Grass";  
     }
+    createMessage()
+}
+
+function createMessage(){
+    let sectionMessages = document.getElementById("messages"); // Get the section where messages will be displayed
+    let paragraph = document.createElement("p"); // Create a new paragraph element
+    paragraph.innerHTML = "Your Mokepon attacked with " + playerAttack + ", the enemy Mokepon attacked with " + enemyAttack + " - "; // Set the inner HTML of the paragraph
+
+    sectionMessages.appendChild(paragraph); // Add the paragraph to the messages section
 }
 
 function random(min, max) {
