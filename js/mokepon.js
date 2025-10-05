@@ -66,38 +66,28 @@ function enemySelection() {
 }
 
 function fireAttack() {
-    let spanPlayerAttack = document.getElementById("player-attack");  // Added this line to modify span player's attack in the HTML
-    spanPlayerAttack.innerHTML = "Fire"; // Added this line to modify span player's attack in the HTML
     playerAttack = "Fire";
     enemyRandomAttack()
 }
 
-function waterAttack() {
-    let spanPlayerAttack = document.getElementById("player-attack")
-    spanPlayerAttack.innerHTML = "Water"  
+function waterAttack() { 
     playerAttack = "Water"  
     enemyRandomAttack()
 }
 
-function grassAttack() {
-    let spanPlayerAttack = document.getElementById("player-attack")
-    spanPlayerAttack.innerHTML = "Grass"    
+function grassAttack() {  
     playerAttack = "Grass"
     enemyRandomAttack()
 }
 
 function enemyRandomAttack() {
-    let spanEnemyAttack = document.getElementById("enemy-attack"); // Added this line to modify span enemy's attack in the HTML
     let randomAttack = random(1, 3)
 
-    if (randomAttack == 1) {
-        spanEnemyAttack.innerHTML = "Fire"; // Added this line to modify span enemy's attack in the HTML
+    if (randomAttack == 1) {        
         enemyAttack = "Fire";        
-    } else if (randomAttack == 2) {
-        spanEnemyAttack.innerHTML = "Water";
+    } else if (randomAttack == 2) {        
         enemyAttack = "Water";
-    } else if (randomAttack == 3) {
-        spanEnemyAttack.innerHTML = "Grass";      
+    } else if (randomAttack == 3) {             
         enemyAttack = "Grass";  
     }
     createMessage()
