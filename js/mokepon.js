@@ -2,7 +2,6 @@ let playerAttack
 let enemyAttack
 
 
-
 function startGame() {
     let buttonMokepon = document.getElementById("button-select-mokepon");
     buttonMokepon.addEventListener("click", playerSelection);   // When the button is clicked, it will call the playerSelection function
@@ -91,13 +90,29 @@ function enemyRandomAttack() {
     } else if (randomAttack == 3) {             
         enemyAttack = "Grass";  
     }
-    createMessage()
+    combat()
 }
 
-function createMessage(){
+function combat() {
+    
+    if (playerAttack == enemyAttack) {        
+        createMessage("It's a tie");  //Send the message as the parameter to the function.
+    } else if (playerAttack == "Fire" && enemyAttack == "Grass") {
+        createMessage("You win");
+    } else if (playerAttack == "Water" && enemyAttack == "Fire") {
+        createMessage("You win");
+    } else if (playerAttack == "Grass" && enemyAttack == "Water") {
+        createMessage("You win");
+    } else {
+        createMessage("You lose");
+    }
+
+}
+
+function createMessage(combatResult){   // Using the parameter as an internal variable for the fuction.
     let sectionMessages = document.getElementById("messages"); // Get the section where messages will be displayed
     let paragraph = document.createElement("p"); // Create a new paragraph element
-    paragraph.innerHTML = "Your Mokepon attacked with " + playerAttack + ", the enemy Mokepon attacked with " + enemyAttack + " - "; // Set the inner HTML of the paragraph
+    paragraph.innerHTML = "Your Mokepon attacked with " + playerAttack + ", the enemy Mokepon attacked with " + enemyAttack +"- " + combatResult; // Set the inner HTML of the paragraph
 
     sectionMessages.appendChild(paragraph); // Add the paragraph to the messages section
 }
