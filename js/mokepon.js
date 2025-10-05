@@ -26,6 +26,7 @@ function playerSelection() {
     let inputPydos = document.getElementById("Pydos");
     let spanPlayerMokepon = document.getElementById("player-mokepon");
     
+    
 
     if (inputHipodoge.checked) {
         spanPlayerMokepon.innerHTML = "Hipodoge"; // Change the inner HTML of the span to show the selected Mokepon
